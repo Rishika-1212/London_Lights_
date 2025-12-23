@@ -3,6 +3,7 @@ import { BokehLights } from './BokehLights';
 import { LondonSkyline } from './LondonSkyline';
 import { StreetLights } from './StreetLights';
 import { Snowfall } from './Snowfall';
+import { CozyCarInterior } from './CozyCarInterior';
 
 interface CarWindowProps {
   children?: ReactNode;
@@ -66,11 +67,22 @@ export const CarWindow = ({ children, isNight }: CarWindowProps) => {
         {/* Snowfall */}
         <Snowfall />
         
+        {/* Cozy car interior elements */}
+        <CozyCarInterior />
+        
         {/* Frost overlay on window */}
         <div className="absolute inset-0 frost-overlay pointer-events-none" />
         
         {/* Window condensation effect */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-frost/5 pointer-events-none" />
+        
+        {/* Vignette effect for cozy feel */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 40%, hsl(var(--night-sky) / 0.4) 100%)'
+          }}
+        />
         
         {/* Content overlay */}
         <div className="relative z-10 h-full">

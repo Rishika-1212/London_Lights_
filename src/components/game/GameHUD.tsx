@@ -1,4 +1,4 @@
-import { Moon, Gamepad2, Disc3, Gift, Clock } from 'lucide-react';
+import { Moon, Gamepad2, Disc3, Clock } from 'lucide-react';
 
 interface GameHUDProps {
   isNight: boolean;
@@ -6,7 +6,6 @@ interface GameHUDProps {
   onSleep: () => void;
   onOpenGames: () => void;
   onOpenMusic: () => void;
-  onTriggerStop: () => void;
 }
 
 export const GameHUD = ({ 
@@ -15,7 +14,6 @@ export const GameHUD = ({
   onSleep, 
   onOpenGames, 
   onOpenMusic,
-  onTriggerStop,
 }: GameHUDProps) => {
   return (
     <>
@@ -65,14 +63,6 @@ export const GameHUD = ({
           >
             <Moon className="w-6 h-6 text-bokeh-blue group-hover:animate-float" />
             <span className="text-xs text-muted-foreground">Sleep</span>
-          </button>
-
-          <button
-            onClick={onTriggerStop}
-            className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-muted/50 transition-colors group"
-          >
-            <Gift className="w-6 h-6 text-christmas-red group-hover:animate-float" />
-            <span className="text-xs text-muted-foreground">Stop</span>
           </button>
         </div>
       </div>
