@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CarWindow } from '@/components/game/CarWindow';
 import { GameHUD } from '@/components/game/GameHUD';
 import { CDPlayer } from '@/components/game/CDPlayer';
@@ -13,6 +13,8 @@ const Index = () => {
   const [isGamesOpen, setIsGamesOpen] = useState(false);
   const [isSleeping, setIsSleeping] = useState(false);
   const [isParentStop, setIsParentStop] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
+  const lastStopTime = useRef(Date.now());
 
   // Real-time clock
   useEffect(() => {
@@ -32,6 +34,29 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Random parent stops - between 45 seconds to 2 minutes
+  useEffect(() => {
+    if (!hasStarted || isSleeping || isParentStop || isGamesOpen || isMusicOpen) return;
+
+    const checkForStop = () => {
+      const timeSinceLastStop = Date.now() - lastStopTime.current;
+      const minTime = 45000; // 45 seconds minimum
+      const maxTime = 120000; // 2 minutes maximum
+      
+      if (timeSinceLastStop > minTime) {
+        // Random chance increases over time
+        const chance = Math.min((timeSinceLastStop - minTime) / (maxTime - minTime), 1);
+        if (Math.random() < chance * 0.1) { // 10% chance per check after min time
+          setIsParentStop(true);
+          lastStopTime.current = Date.now();
+        }
+      }
+    };
+
+    const interval = setInterval(checkForStop, 5000); // Check every 5 seconds
+    return () => clearInterval(interval);
+  }, [hasStarted, isSleeping, isParentStop, isGamesOpen, isMusicOpen]);
+
   return (
     <div className="fixed inset-0 overflow-hidden bg-nightSky">
       {/* Main car window view */}
@@ -43,7 +68,6 @@ const Index = () => {
           onSleep={() => setIsSleeping(true)}
           onOpenGames={() => setIsGamesOpen(true)}
           onOpenMusic={() => setIsMusicOpen(true)}
-          onTriggerStop={() => setIsParentStop(true)}
         />
       </CarWindow>
 
@@ -60,20 +84,29 @@ const Index = () => {
       <ParentStop isActive={isParentStop} onClose={() => setIsParentStop(false)} />
 
       {/* Welcome overlay for first visit */}
-      <WelcomeOverlay />
+      <WelcomeOverlay onStart={() => setHasStarted(true)} />
     </div>
   );
 };
 
-const WelcomeOverlay = () => {
+interface WelcomeOverlayProps {
+  onStart: () => void;
+}
+
+const WelcomeOverlay = ({ onStart }: WelcomeOverlayProps) => {
   const [isVisible, setIsVisible] = useState(true);
+
+  const handleStart = () => {
+    setIsVisible(false);
+    onStart();
+  };
 
   if (!isVisible) return null;
 
   return (
     <div 
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-nightSky/95 backdrop-blur-md animate-fade-in-up cursor-pointer"
-      onClick={() => setIsVisible(false)}
+      onClick={handleStart}
     >
       <div className="text-center max-w-md">
         <div className="text-6xl mb-6 animate-float">🚗</div>
@@ -90,9 +123,9 @@ const WelcomeOverlay = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-8 text-2xl">
           <span className="animate-float" style={{ animationDelay: '0s' }}>🎄</span>
           <span className="animate-float" style={{ animationDelay: '0.2s' }}>❄️</span>
-          <span className="animate-float" style={{ animationDelay: '0.4s' }}>🎁</span>
+          <span className="animate-float" style={{ animationDelay: '0.4s' }}>☕</span>
           <span className="animate-float" style={{ animationDelay: '0.6s' }}>🌟</span>
-          <span className="animate-float" style={{ animationDelay: '0.8s' }}>🍪</span>
+          <span className="animate-float" style={{ animationDelay: '0.8s' }}>🧸</span>
         </div>
 
         <p className="text-warmGlow animate-pulse">
