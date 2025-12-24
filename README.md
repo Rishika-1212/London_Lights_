@@ -26,6 +26,5 @@ React + Vite: Zoom zoom.
 
 Tailwind CSS: For the drip.
 
-Lucide Icons: Because we appreciate fine art.
 
 No winning, no losing—just vibes.
