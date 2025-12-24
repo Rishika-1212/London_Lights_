@@ -2,11 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Disc3, Music, Volume2, VolumeX } from 'lucide-react';
 
 // --- IMPORTS FOR LOCAL AUDIO FILES ---
-// In React/Vite, you must import assets from the src folder to get their final URL.
+
 import jingleBellRock from './res/Bobby Helms - Jingle Bell Rock.mp3';
 import rockinTree from "./res/Brenda Lee - Rockin' Around The Christmas Tree (Remastered).mp3";
 import beginningToLook from './res/It_s_Beginning_To_Look_A_Lot_Like_Christmas.mp3';
-// RENAMED: Removed special character 'é' to prevent build errors. Please rename your file to match!
 import hollyJolly from './res/Michael Buble - Holly Jolly Christmas.mp3';
 import lastChristmas from './res/Wham! - Last Christmas (Lyrics).mp3';
 

@@ -16,7 +16,7 @@ const generatePlate = () => {
   return `${part1}${part2} ${part3}`;
 };
 
-const specialPlates = ['XX00 XXX', 'LO00 VEY', 'XM00 ASS', 'SN00 OWY'];
+const specialPlates = ['XX00 MXX', 'LO00 VEY', 'XMA0 ASS', 'SN00 OWY'];
 
 export const LicensePlateGame = ({ onBack }: LicensePlateGameProps) => {
   const [plates, setPlates] = useState<string[]>([]);

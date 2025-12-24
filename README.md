@@ -1,73 +1,31 @@
-# Welcome to your Lovable project
+🎄 London Lights
 
-## Project info
+"No thoughts, just vibes."
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+POV: You’re 7 years old. It’s Christmas Eve in London. You are small, the car seat is big, and your only responsibility is staring out the window at the blurry lights. Adulting is paused.
 
-## How can I edit this code?
+London Lights is a cozy, aesthetic web experience designed to heal your inner child and cure your doomscrolling fatigue. It’s not about winning; it’s about that specific feeling of dissociation in the backseat of your parents' car while it rains. It’s giving main character energy.
 
-There are several ways of editing your application.
+Built with React and Tailwind CSS, because we like our nostalgia fast and our styles utility-first.
 
-**Use Lovable**
+✨ Features (The Lore)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+🚕 Infinite "Main Character" Drive: A never-ending journey through stylized London streets. The days switch to nights in real-time because we respect the laws of physics (mostly).
 
-Changes made via Lovable will be committed automatically to this repo.
+🌧️ Foggy Window 2.0: The glass fogs up. You can draw on it with your mouse. It’s like an iPad for people who remember life before the internet. Satisfying? Yes. Productive? Absolutely not.
 
-**Use your preferred IDE**
+💿 DJ Aux Cord (But Retro): A fully functional CD Player loaded with holiday bangers. None of that Spotify Wrapped; we’re manually skipping tracks like it's 1999.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🎁 The "Dad, Can We Stop?" Mechanic: Random halts where you collect virtual snacks (Hot Cocoa, Gingerbread) to fill the void in your soul.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🍅 Productive Rotting: Need to actually work? Hit "Sleep." The screen goes dark, the rain gets louder, and a Pomodoro timer starts. Nap for 25 minutes, then wake up and continue the journey.
 
-Follow these steps:
+🛠️ Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+React + Vite: Zoom zoom.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Tailwind CSS: For the drip.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Lucide Icons: Because we appreciate fine art.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+No winning, no losing—just vibes.
